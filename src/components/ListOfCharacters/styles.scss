@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: red;
+}
+.listCharacters {
+  padding: 0px;
+}
+.characters {
+  list-style: none;
+  margin: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  .listCharacters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1639px) {
+  .listCharacters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
