@@ -1,48 +1,52 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./styles.scss";
 import CharacterCard from "../CharacterCard";
+//import useFetchData from "../../hooks/useFetchData";
+
 function ListOfCaracters() {
   const [page, setPage] = useState(1);
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-  const [nextPage, setNextPage] = useState(null);
-
+  const [characters, setCharacters] = useState([]);
   useEffect(() => {
     fetch(api)
       .then((res) => res.json())
-      .then(
-        (response) => {
-          setIsLoaded(true);
-          setNextPage(response.info.next);
-          setItems(response.results);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, []);
+      .then((response) => {
+        setCharacters((characters) => characters.concat(response.results));
+      });
+  }, [api]);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
-  } else {
-    return (
-      <Fragment>
-        <main>
-          <ul className="listCharacters">
-            {items.map((character) => (
-              <li className="characters" key={character.id}>
-                <CharacterCard character={character} />
-              </li>
-            ))}
-          </ul>
-        </main>
-      </Fragment>
-    );
-  }
+  return (
+    <Fragment>
+      <main>
+        <ul className="listCharacters">
+          {" "}
+          {console.log(characters)}
+          {characters.map((character) => (
+            <li className="characters" key={character.id}>
+              <CharacterCard character={character} />
+            </li>
+          ))}
+          {/* <p
+            onClick={() => {
+              setPage(page + 1);
+            }}
+          >
+            sddadas
+          </p> */}
+          {window.addEventListener("scroll", () => {
+            if (
+              window.innerHeight + document.documentElement.scrollTop !==
+              document.documentElement.offsetHeight
+            ) {
+              return;
+            } else {
+              setPage(page + 1);
+            }
+          })}
+        </ul>
+      </main>
+    </Fragment>
+  );
 }
+
 export default ListOfCaracters;
