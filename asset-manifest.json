@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/RickandMorty/static/css/main.26a34ba7.chunk.css",
-    "main.js": "/RickandMorty/static/js/main.ed68e297.chunk.js",
-    "main.js.map": "/RickandMorty/static/js/main.ed68e297.chunk.js.map",
+    "main.js": "/RickandMorty/static/js/main.f22fb79f.chunk.js",
+    "main.js.map": "/RickandMorty/static/js/main.f22fb79f.chunk.js.map",
     "runtime-main.js": "/RickandMorty/static/js/runtime-main.89bc439a.js",
     "runtime-main.js.map": "/RickandMorty/static/js/runtime-main.89bc439a.js.map",
-    "static/js/2.43d5a3c1.chunk.js": "/RickandMorty/static/js/2.43d5a3c1.chunk.js",
-    "static/js/2.43d5a3c1.chunk.js.map": "/RickandMorty/static/js/2.43d5a3c1.chunk.js.map",
+    "static/js/2.4569efe8.chunk.js": "/RickandMorty/static/js/2.4569efe8.chunk.js",
+    "static/js/2.4569efe8.chunk.js.map": "/RickandMorty/static/js/2.4569efe8.chunk.js.map",
     "index.html": "/RickandMorty/index.html",
-    "precache-manifest.d3667730bb708ae606a398baf69ade1e.js": "/RickandMorty/precache-manifest.d3667730bb708ae606a398baf69ade1e.js",
+    "precache-manifest.6e3d4036ba9f0e42e008c75a44fb5df4.js": "/RickandMorty/precache-manifest.6e3d4036ba9f0e42e008c75a44fb5df4.js",
     "service-worker.js": "/RickandMorty/service-worker.js",
     "static/css/main.26a34ba7.chunk.css.map": "/RickandMorty/static/css/main.26a34ba7.chunk.css.map",
-    "static/js/2.43d5a3c1.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.43d5a3c1.chunk.js.LICENSE.txt",
+    "static/js/2.4569efe8.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.4569efe8.chunk.js.LICENSE.txt",
     "static/media/HeroImage.png": "/RickandMorty/static/media/HeroImage.42d6efdb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.89bc439a.js",
-    "static/js/2.43d5a3c1.chunk.js",
+    "static/js/2.4569efe8.chunk.js",
     "static/css/main.26a34ba7.chunk.css",
-    "static/js/main.ed68e297.chunk.js"
+    "static/js/main.f22fb79f.chunk.js"
   ]
 }
