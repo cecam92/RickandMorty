@@ -43,13 +43,13 @@ function ListOfCaracters() {
               <CharacterCard character={character} />
             </li>
           ))}
-          <button
+          {/* <button
             onClick={() => {
               setPage(page + 1);
             }}
           >
             sddadas
-          </button>
+          </button> */}
         </ul>
       </main>
     </Fragment>
