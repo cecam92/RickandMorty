@@ -25,7 +25,7 @@ function ListOfCaracters() {
     fetchData(api);
     window.addEventListener("scroll", isScrolling);
     return () => window.removeEventListener("scroll", isScrolling);
-  }, [api]);
+  }, [api, page]);
 
   function fetchData(url) {
     console.log(url);
