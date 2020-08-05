@@ -5,6 +5,7 @@ import CharacterCard from "../CharacterCard";
 
 function ListOfCaracters() {
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(2);
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
   const [characters, setCharacters] = useState([]);
 
@@ -15,7 +16,9 @@ function ListOfCaracters() {
     ) {
       return;
     } else {
-      setPage(page + 1);
+      if (page < totalPages) {
+        setPage(page + 1);
+      }
     }
   }
   useEffect(() => {
@@ -30,6 +33,7 @@ function ListOfCaracters() {
       .then((res) => res.json())
       .then((response) => {
         setCharacters((characters) => characters.concat(response.results));
+        setTotalPages(response.info.pages);
       });
   }
 
@@ -37,7 +41,7 @@ function ListOfCaracters() {
     <Fragment>
       <main>
         <ul className="listCharacters">
-          {console.log(characters)}
+          {console.log(totalPages)}
           {characters.map((character) => (
             <li className="characters" key={character.id}>
               <CharacterCard character={character} />
