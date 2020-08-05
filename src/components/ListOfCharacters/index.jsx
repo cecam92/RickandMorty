@@ -1,7 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./styles.scss";
 import CharacterCard from "../CharacterCard";
-//import useFetchData from "../../hooks/useFetchData";
+import { Link } from "react-router-dom";
+//import useFetchData from "../hooks/useFetchData";
 
 function ListOfCaracters() {
   const [page, setPage] = useState(1);
@@ -28,7 +29,7 @@ function ListOfCaracters() {
   }, [api, page]);
 
   function fetchData(url) {
-    console.log(url);
+    // console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((response) => {
@@ -41,10 +42,16 @@ function ListOfCaracters() {
     <Fragment>
       <main>
         <ul className="listCharacters">
-          {console.log(totalPages)}
           {characters.map((character) => (
             <li className="characters" key={character.id}>
-              <CharacterCard character={character} />
+              <Link
+                to={{
+                  pathname: `/${character.id}`,
+                  id: character.id,
+                }}
+              >
+                <CharacterCard character={character} />
+              </Link>
             </li>
           ))}
           {/* <button
