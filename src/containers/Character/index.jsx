@@ -10,7 +10,7 @@ function Character(props) {
     if (props.location.id) {
       return props.location.id;
     } else {
-      return props.location.pathname.split("/")[1];
+      return props.location.pathname.split("/")[2];
     }
   }
 

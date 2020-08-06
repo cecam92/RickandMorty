@@ -6,7 +6,7 @@ function Hero() {
   return (
     <Fragment>
       <header className="hero">
-        <Link to="/">
+        <Link to="/characters">
           <img className="hero__image" src={HeroImage} alt="Hero"></img>
         </Link>
       </header>

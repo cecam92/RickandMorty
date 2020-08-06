@@ -71,7 +71,7 @@ function ListOfCaracters() {
             <li className="characters" key={character.id}>
               <Link
                 to={{
-                  pathname: `/${character.id}`,
+                  pathname: `/characters/${character.id}`,
                   id: character.id,
                 }}
               >
