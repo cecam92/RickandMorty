@@ -9,7 +9,11 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/:characterId" component={Character} />
-        <Route component={<p>notfound </p>} />
+        <Route
+          component={() => {
+            return <p>404: No found </p>;
+          }}
+        />
       </Switch>
     </HashRouter>
   );

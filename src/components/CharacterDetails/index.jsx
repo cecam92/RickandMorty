@@ -4,13 +4,13 @@ import { gql } from "apollo-boost";
 import Front from "./Front";
 
 const CharacterDetails = (props) => {
-  const sad = props.id;
+  const characterID = props.id;
 
   return (
     <Query
       query={gql`
         {
-          character(id: ${sad}) {
+          character(id: ${characterID}) {
             id
             name
             status 

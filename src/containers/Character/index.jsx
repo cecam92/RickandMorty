@@ -4,7 +4,15 @@ import "./styles.scss";
 import CharacterDetails from "../../components/CharacterDetails";
 
 function Character(props) {
-  const id = props.location.id;
+  const id = validarUrl(props);
+
+  function validarUrl() {
+    if (props.location.id) {
+      return props.location.id;
+    } else {
+      return props.location.pathname.split("/")[1];
+    }
+  }
 
   return (
     <Fragment>
