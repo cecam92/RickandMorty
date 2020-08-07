@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Hero() {
   const [showLogo, setShowLogo] = useState(true);
 
-  const isScrolling = () => {
+  const ScrollingBar = () => {
     if (document.documentElement.scrollTop <= 100) {
       setShowLogo(true);
     } else {
@@ -14,7 +14,10 @@ function Hero() {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", isScrolling);
+    window.addEventListener("scroll", ScrollingBar);
+    return () => {
+      window.removeEventListener("scroll", ScrollingBar);
+    };
   }, [showLogo]);
 
   if (showLogo) {

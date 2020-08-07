@@ -33,14 +33,16 @@ function ListOfCaracters() {
   const [characters, setCharacters] = useState(localCharacters);
 
   function isScrolling() {
+    const offsetOnMain = 200;
     if (
       window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
+      document.documentElement.offsetHeight + offsetOnMain
     ) {
       return;
     } else {
       if (page < totalPages) {
         setPage(page + 1);
+        console.log(page);
       }
     }
   }
