@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import "./styles.scss";
 import CharacterCard from "../CharacterCard";
 import { Link } from "react-router-dom";
+import FilteredList from "./FilteredList";
 //import useFetchData from "../hooks/useFetchData";
 
 function saveInLocal(cards, index) {
@@ -32,7 +33,7 @@ function ListOfCaracters() {
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
   const [characters, setCharacters] = useState(localCharacters);
   const [filter, setFilter] = useState("");
-
+  const [filtered, setFiltered] = useState([]);
   function isScrolling() {
     const offsetOnMain = 100;
     if (
@@ -52,15 +53,45 @@ function ListOfCaracters() {
       setShowBar(true);
     } else {
       setShowBar(false);
+      setFilter("");
     }
   }
+  function chad() {
+    if (filter !== "") {
+      setFiltered([
+        {
+          id: 1,
+          name: "Rick Sanchez",
+          status: "Alive",
+          origin: "Earth",
+          type: "",
+        },
+        {
+          id: 2,
+          name: "Morty Smith",
+          status: "Alive",
+          origin: "Earth",
+          type: "",
+        },
+      ]);
+    }
+  }
+  console.log(filter);
+  console.log(filtered);
 
   useEffect(() => {
     window.addEventListener("scroll", Searchbar);
+    chad();
+    if (filtered !== "") {
+      setCharacters(filtered);
+      setShowBar(true);
+      document.documentElement.scrollTop = 143;
+    }
     return () => {
       window.removeEventListener("scroll", Searchbar);
+      setShowBar(false);
     };
-  }, [showBar]);
+  }, [filter]);
 
   useEffect(() => {
     fetchData(api);
@@ -70,6 +101,7 @@ function ListOfCaracters() {
     return () => {
       window.removeEventListener("scroll", isScrolling);
       window.removeEventListener("scroll", Searchbar);
+      setShowBar(false);
     };
   }, [api, page]);
 
@@ -86,68 +118,20 @@ function ListOfCaracters() {
     setFilter(e.target.value);
   }
 
-  if (showBar && filter === "") {
-    return (
-      <main>
-        <header className="sticky">
-          <div className="Search">
-            <input
-              className="Search__input"
-              placeholder="search by caracter o Id"
-              onChange={inputValue}
-            />
-          </div>
-        </header>
-        <ul className="listCharacters">
-          {characters.map((character) => (
-            <li className="characters" key={character.id}>
-              <Link
-                to={{
-                  pathname: `/characters/${character.id}`,
-                  id: character.id,
-                }}
-              >
-                <CharacterCard character={character} />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
-    );
-  }
-  if (showBar && filter !== "") {
-    return (
-      <main>
-        <header className="sticky">
-          <div className="Search">
-            <input
-              className="Search__input"
-              placeholder="search by caracter o Id"
-              onChange={inputValue}
-            />
-          </div>
-        </header>
-        <ul className="listCharacters">
-          {characters.map((character) => (
-            <li className="characters" key={character.id}>
-              <Link
-                to={{
-                  pathname: `/characters/${character.id}`,
-                  id: character.id,
-                }}
-              >
-                <CharacterCard character={character} />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </main>
-    );
-  }
-
   return (
     <Fragment>
       <main>
+        {showBar && (
+          <header className="sticky">
+            <div className="Search">
+              <input
+                className="Search__input"
+                placeholder="search by caracter o Id"
+                onChange={inputValue}
+              />
+            </div>
+          </header>
+        )}
         <ul className="listCharacters">
           {characters.map((character) => (
             <li className="characters" key={character.id}>
