@@ -19,7 +19,6 @@ const CharacterDetails = (props) => {
    }
  }
 `;
-
   return (
     <Query query={query}>
       {({ loading, error, data }) => {

@@ -17,23 +17,24 @@ function getPage() {
   const index = localStorage.getItem("page");
   return index;
 }
+////////////////////////////////////////////
 
 function ListOfCaracters() {
   const localCharacters = () => {
     return getCharacters() == null ? [] : getCharacters();
   };
-
   const index = () => {
     return getPage() == null ? 1 : parseInt(getPage());
   };
-
+  const [showBar, setShowBar] = useState(false);
   const [page, setPage] = useState(index);
   const [totalPages, setTotalPages] = useState(28790);
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
   const [characters, setCharacters] = useState(localCharacters);
+  const [filter, setFilter] = useState("");
 
   function isScrolling() {
-    const offsetOnMain = 200;
+    const offsetOnMain = 100;
     if (
       window.innerHeight + document.documentElement.scrollTop !==
       document.documentElement.offsetHeight + offsetOnMain
@@ -46,13 +47,29 @@ function ListOfCaracters() {
       }
     }
   }
+  function Searchbar() {
+    if (document.documentElement.scrollTop > 143) {
+      setShowBar(true);
+    } else {
+      setShowBar(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", Searchbar);
+    return () => {
+      window.removeEventListener("scroll", Searchbar);
+    };
+  }, [showBar]);
 
   useEffect(() => {
     fetchData(api);
     saveInLocal(characters, page);
     window.addEventListener("scroll", isScrolling);
+    window.addEventListener("scroll", Searchbar);
     return () => {
       window.removeEventListener("scroll", isScrolling);
+      window.removeEventListener("scroll", Searchbar);
     };
   }, [api, page]);
 
@@ -63,6 +80,69 @@ function ListOfCaracters() {
         setCharacters((characters) => characters.concat(response.results));
         setTotalPages(response.info.pages);
       });
+  }
+
+  function inputValue(e) {
+    setFilter(e.target.value);
+  }
+
+  if (showBar && filter === "") {
+    return (
+      <main>
+        <header className="sticky">
+          <div className="Search">
+            <input
+              className="Search__input"
+              placeholder="search by caracter o Id"
+              onChange={inputValue}
+            />
+          </div>
+        </header>
+        <ul className="listCharacters">
+          {characters.map((character) => (
+            <li className="characters" key={character.id}>
+              <Link
+                to={{
+                  pathname: `/characters/${character.id}`,
+                  id: character.id,
+                }}
+              >
+                <CharacterCard character={character} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </main>
+    );
+  }
+  if (showBar && filter !== "") {
+    return (
+      <main>
+        <header className="sticky">
+          <div className="Search">
+            <input
+              className="Search__input"
+              placeholder="search by caracter o Id"
+              onChange={inputValue}
+            />
+          </div>
+        </header>
+        <ul className="listCharacters">
+          {characters.map((character) => (
+            <li className="characters" key={character.id}>
+              <Link
+                to={{
+                  pathname: `/characters/${character.id}`,
+                  id: character.id,
+                }}
+              >
+                <CharacterCard character={character} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </main>
+    );
   }
 
   return (
