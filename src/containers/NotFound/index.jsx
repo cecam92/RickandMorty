@@ -1,20 +1,20 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../../components/Hero";
-import Schwifty from "../../Assests/Schwifty.png";
+import Buried from "../../Assests/Buried.jpeg";
 import "./styles.scss";
-function FirstPage() {
+function NotFound() {
   return (
     <Fragment>
       <Hero />
       <main>
-        <div className="schwiftyContainer">
+        <div className="notFoundContainer">
           <Link to="/characters">
-            <img className="schwifty-image" src={Schwifty} alt="get schwifty" />
+            <img className="notFound-image" src={Buried} alt="404 not found" />
           </Link>
         </div>
       </main>
     </Fragment>
   );
 }
-export default FirstPage;
+export default NotFound;

@@ -1,16 +1,48 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./styles.scss";
 import HeroImage from "../../Assests/HeroImage.png";
 import { Link } from "react-router-dom";
+
 function Hero() {
-  return (
-    <Fragment>
-      <header className="hero">
-        <Link to="/characters">
-          <img className="hero__image" src={HeroImage} alt="Hero"></img>
-        </Link>
-      </header>
-    </Fragment>
-  );
+  const [showLogo, setShowLogo] = useState(true);
+
+  const isScrolling = () => {
+    if (document.documentElement.scrollTop <= 100) {
+      setShowLogo(true);
+    } else {
+      setShowLogo(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", isScrolling);
+  }, [showLogo]);
+
+  if (showLogo) {
+    return (
+      <Fragment>
+        <header className="hero sticky">
+          <Link to="/characters">
+            <img className="hero__image" src={HeroImage} alt="Hero Logo"></img>
+          </Link>
+        </header>
+      </Fragment>
+    );
+  }
+
+  if (!showLogo) {
+    return (
+      <Fragment>
+        <header className="hero sticky">
+          <div className="heroSearch">
+            <input
+              className="heroSearch__input"
+              placeholder="search by caracter o Id"
+            />
+          </div>
+        </header>
+      </Fragment>
+    );
+  }
 }
+
 export default Hero;

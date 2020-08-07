@@ -1,0 +1,14 @@
+.notFoundContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 5%;
+  width: 100%;
+}
+
+.notFound-image {
+  width: 600px;
+  @media screen and (max-width: 415px) {
+    width: 300px;
+  }
+}
