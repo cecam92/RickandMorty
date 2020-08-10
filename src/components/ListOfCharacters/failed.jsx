@@ -148,3 +148,20 @@ function ListOfCaracters() {
 }
 
 export default ListOfCaracters;
+//console.log(`FetchGQL  ${props}`);
+// const characters = [
+//   {
+//     id: 1,
+//     name: "Rick Sanchez",
+//     status: "Alive",
+//     origin: "Earth",
+//     type: "",
+//   },
+//   {
+//     id: 2,
+//     name: "Morty Smith",
+//     status: "Alive",
+//     origin: "Earth",
+//     type: "",
+//   },
+// ];

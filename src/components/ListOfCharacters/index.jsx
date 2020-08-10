@@ -1,14 +1,33 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./styles.scss";
-import CharacterCard from "../CharacterCard";
-import { Link } from "react-router-dom";
-//import useWithRest from "./useWithRest";
+import Lista from "./Lista";
+import FetchGQL from "./FetchGQL";
+import Buried from "../../Assests/Buried.jpeg";
 
+// function getCharacters() {
+//   const pepito = localStorage.getItem("characters");
+//   const data = JSON.parse(pepito);
+//   return data;
+// }
+// function getPage() {
+//   const index = localStorage.getItem("page");
+//   return index;
+// }
 function ListOfCaracters() {
+  // const localCharacters = () => {
+  //   return getCharacters() == null ? [] : getCharacters();
+  // };
+  // const index = () => {
+  //   return getPage() == null ? 1 : parseInt(getPage());
+  // };
   const [page, setPage] = useState(1);
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
   const [characters, setCharacters] = useState([]);
   const [totalPages, setTotalPages] = useState(7689);
+  const [showBar, setShowBar] = useState(false);
+  const [filter, setFilter] = useState("");
+  const [filteredCharacters, setFilteredCharacters] = useState([]);
+  const [error, setError] = useState(false);
 
   function getData(url) {
     fetch(url)
@@ -26,35 +45,78 @@ function ListOfCaracters() {
     ) {
       return;
     } else {
-      setPage(page + 1);
+      if (totalPages > page) {
+        setPage(page + 1);
+      }
     }
   }
+  function searchBar() {
+    if (document.documentElement.scrollTop > 50) {
+      setShowBar(true);
+    } else {
+      setShowBar(false);
+    }
+  }
+  function inputValue(e) {
+    setFilter(e.target.value);
+  }
+
   useEffect(() => {
     getData(api);
     window.addEventListener("scroll", isScrolling);
+    window.addEventListener("scroll", searchBar);
+
     return () => {
       window.removeEventListener("scroll", isScrolling);
+      window.removeEventListener("scroll", searchBar);
     };
   }, [api, page]);
-  console.log(page);
+
+  async function filteredData() {
+    if (filter && filter !== undefined && filter !== "") {
+      try {
+        const char = await FetchGQL(filter);
+        console.log(` error ${char}`);
+        if (char) {
+          setError(false);
+          setFilteredCharacters(char);
+        }
+      } catch (e) {
+        setError(true);
+        setFilteredCharacters([]);
+      }
+    } else {
+      setFilteredCharacters([]);
+    }
+  }
+  useEffect(() => {
+    filteredData();
+    console.log(`Characters Filtered : ${filteredCharacters}`);
+  }, [filter]);
+
+  console.log(`filter : ${filter}`);
 
   return (
     <Fragment>
       <main>
-        <ul className="listCharacters">
-          {characters.map((character) => (
-            <li className="characters" key={character.id}>
-              <Link
-                to={{
-                  pathname: `/characters/${character.id}`,
-                  id: character.id,
+        {(showBar || filter) && (
+          <header className="sticky">
+            <div className="Search">
+              <input
+                className="Search__input"
+                placeholder="search by caracter o Id"
+                onChange={(e) => {
+                  inputValue(e);
                 }}
-              >
-                <CharacterCard character={character} />
-              </Link>
-            </li>
-          ))}
-        </ul>
+              />
+            </div>
+          </header>
+        )}
+        {(!filter || filter === "") && <Lista data={characters} page={page} />}
+        {filteredCharacters && filter !== "" && (
+          <Lista data={filteredCharacters} />
+        )}
+        {error && <img src={Buried} alt="No found" />}
       </main>
     </Fragment>
   );
