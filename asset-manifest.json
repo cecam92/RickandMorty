@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/RickandMorty/static/css/main.fc5b29b1.chunk.css",
-    "main.js": "/RickandMorty/static/js/main.1c05b8cb.chunk.js",
-    "main.js.map": "/RickandMorty/static/js/main.1c05b8cb.chunk.js.map",
+    "main.css": "/RickandMorty/static/css/main.b721c087.chunk.css",
+    "main.js": "/RickandMorty/static/js/main.2c5b02ba.chunk.js",
+    "main.js.map": "/RickandMorty/static/js/main.2c5b02ba.chunk.js.map",
     "runtime-main.js": "/RickandMorty/static/js/runtime-main.89bc439a.js",
     "runtime-main.js.map": "/RickandMorty/static/js/runtime-main.89bc439a.js.map",
-    "static/js/2.6d1a08db.chunk.js": "/RickandMorty/static/js/2.6d1a08db.chunk.js",
-    "static/js/2.6d1a08db.chunk.js.map": "/RickandMorty/static/js/2.6d1a08db.chunk.js.map",
+    "static/js/2.5fb15c8c.chunk.js": "/RickandMorty/static/js/2.5fb15c8c.chunk.js",
+    "static/js/2.5fb15c8c.chunk.js.map": "/RickandMorty/static/js/2.5fb15c8c.chunk.js.map",
     "index.html": "/RickandMorty/index.html",
-    "precache-manifest.da21327c35b13fadb10b68575433e8ec.js": "/RickandMorty/precache-manifest.da21327c35b13fadb10b68575433e8ec.js",
+    "precache-manifest.065ac4d0f79ea05a3f05bcb8dc1079bf.js": "/RickandMorty/precache-manifest.065ac4d0f79ea05a3f05bcb8dc1079bf.js",
     "service-worker.js": "/RickandMorty/service-worker.js",
-    "static/css/main.fc5b29b1.chunk.css.map": "/RickandMorty/static/css/main.fc5b29b1.chunk.css.map",
-    "static/js/2.6d1a08db.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.6d1a08db.chunk.js.LICENSE.txt",
+    "static/css/main.b721c087.chunk.css.map": "/RickandMorty/static/css/main.b721c087.chunk.css.map",
+    "static/js/2.5fb15c8c.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.5fb15c8c.chunk.js.LICENSE.txt",
     "static/media/Buried.jpeg": "/RickandMorty/static/media/Buried.bc95a60c.jpeg",
     "static/media/HeroImage.png": "/RickandMorty/static/media/HeroImage.42d6efdb.png",
     "static/media/Schwifty.png": "/RickandMorty/static/media/Schwifty.1c56175c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.89bc439a.js",
-    "static/js/2.6d1a08db.chunk.js",
-    "static/css/main.fc5b29b1.chunk.css",
-    "static/js/main.1c05b8cb.chunk.js"
+    "static/js/2.5fb15c8c.chunk.js",
+    "static/css/main.b721c087.chunk.css",
+    "static/js/main.2c5b02ba.chunk.js"
   ]
 }
