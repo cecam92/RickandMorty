@@ -6,7 +6,7 @@ function Home() {
   const [showHero, setShowHero] = useState(false);
 
   function showIt() {
-    if (document.documentElement.scrollTop != 0) {
+    if (document.documentElement.scrollTop !== 0) {
       setShowHero(false);
     } else {
       setShowHero(true);

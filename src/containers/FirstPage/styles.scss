@@ -4,8 +4,15 @@
   align-content: center;
   width: 100%;
 }
+
 .schwifty-image {
   width: 100%;
   @media screen and (max-width: 415px) {
   }
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
 }

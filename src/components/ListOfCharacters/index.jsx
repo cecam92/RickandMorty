@@ -24,7 +24,7 @@ function ListOfCaracters() {
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
   const [characters, setCharacters] = useState([]);
   const [totalPages, setTotalPages] = useState(7689);
-  const [showBar, setShowBar] = useState(false);
+  //const [showBar, setShowBar] = useState(false);
   const [filter, setFilter] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState([]);
   const [error, setError] = useState(false);
@@ -41,7 +41,7 @@ function ListOfCaracters() {
   function isScrolling() {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight + 100
+      document.documentElement.offsetHeight
     ) {
       return;
     } else {
@@ -50,13 +50,13 @@ function ListOfCaracters() {
       }
     }
   }
-  function searchBar() {
-    if (document.documentElement.scrollTop > 50) {
-      setShowBar(true);
-    } else {
-      setShowBar(false);
-    }
-  }
+  // function searchBar() {
+  //   if (document.documentElement.scrollTop > 50) {
+  //     setShowBar(true);
+  //   } else {
+  //     setShowBar(false);
+  //   }
+  // }
   function inputValue(e) {
     setFilter(e.target.value);
   }
@@ -64,11 +64,11 @@ function ListOfCaracters() {
   useEffect(() => {
     getData(api);
     window.addEventListener("scroll", isScrolling);
-    window.addEventListener("scroll", searchBar);
+    //window.addEventListener("scroll", searchBar);
 
     return () => {
       window.removeEventListener("scroll", isScrolling);
-      window.removeEventListener("scroll", searchBar);
+      // window.removeEventListener("scroll", searchBar);
     };
   }, [api, page]);
 
@@ -98,25 +98,27 @@ function ListOfCaracters() {
 
   return (
     <Fragment>
+      {/* {(showBar || filter) && ( */}
+      <header className="sticky">
+        <div className="Search">
+          <input
+            className="Search__input"
+            placeholder="Write character's name"
+            onChange={(e) => {
+              inputValue(e);
+            }}
+          />
+        </div>
+      </header>
+      {/* )} */}{" "}
       <main>
-        {(showBar || filter) && (
-          <header className="sticky">
-            <div className="Search">
-              <input
-                className="Search__input"
-                placeholder="search by caracter o Id"
-                onChange={(e) => {
-                  inputValue(e);
-                }}
-              />
-            </div>
-          </header>
-        )}
         {(!filter || filter === "") && <Lista data={characters} page={page} />}
         {filteredCharacters && filter !== "" && (
           <Lista data={filteredCharacters} />
         )}
-        {error && <img src={Buried} alt="No found" />}
+        {error && filter && (
+          <img className="errorImage" src={Buried} alt="No found" />
+        )}
       </main>
     </Fragment>
   );

@@ -17,7 +17,9 @@ function Character(props) {
   return (
     <Fragment>
       <Hero />
-      <CharacterDetails id={id} />
+      <main>
+        <CharacterDetails id={id} />
+      </main>
     </Fragment>
   );
 }

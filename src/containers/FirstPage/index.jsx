@@ -14,6 +14,9 @@ function FirstPage() {
           </Link>
         </div>
       </main>
+      <footer>
+        <h2 className="footer">Culimbo</h2>
+      </footer>
     </Fragment>
   );
 }
