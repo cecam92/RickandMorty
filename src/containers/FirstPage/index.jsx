@@ -9,7 +9,7 @@ function FirstPage() {
       <Hero />
       <main>
         <div className="schwiftyContainer">
-          <Link to="/characters">
+          <Link to="/characters" className="schwiftyContainer__image">
             <img className="schwifty-image" src={Schwifty} alt="get schwifty" />
           </Link>
         </div>

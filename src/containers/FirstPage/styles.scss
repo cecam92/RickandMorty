@@ -1,15 +1,16 @@
-.schwiftyContainer,
-a {
+.schwiftyContainer {
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-.schwifty-image {
-  width: 100%;
+.schwiftyContainer__image {
   @media screen and (max-width: 1800px) and (min-width: 670px) {
     width: 75%;
   }
+}
+.schwifty-image {
+  width: 100%;
 }
 footer {
   display: flex;
