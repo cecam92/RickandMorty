@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import "./styles.scss";
 import HeroImage from "../../Assests/HeroImage.png";
 import { Link } from "react-router-dom";
