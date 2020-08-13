@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../../components/Hero";
-import Buried from "../../Assests/Buried.jpeg";
+import Buried from "../../assests/Buried.jpeg";
 import "./styles.scss";
 function NotFound() {
   return (

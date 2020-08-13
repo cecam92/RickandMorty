@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "./styles.scss";
-import HeroImage from "../../Assests/HeroImage.png";
+import HeroImage from "../../assests/HeroImage.png";
 import { Link } from "react-router-dom";
 
 function Hero() {

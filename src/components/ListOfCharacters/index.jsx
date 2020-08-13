@@ -2,61 +2,51 @@ import React, { Fragment, useState, useEffect } from "react";
 import "./styles.scss";
 import Lista from "./Lista";
 import FetchGQL from "./FetchGQL";
-import Buried from "../../Assests/Buried.jpeg";
+import Buried from "../../assests/Buried.jpeg";
+import { useSelector, useDispatch } from "react-redux";
 
-// function getCharacters() {
-//   const pepito = localStorage.getItem("characters");
-//   const data = JSON.parse(pepito);
-//   return data;
-// }
-// function getPage() {
-//   const index = localStorage.getItem("page");
-//   return index;
-// }
 function ListOfCaracters() {
-  // const localCharacters = () => {
-  //   return getCharacters() == null ? [] : getCharacters();
-  // };
-  // const index = () => {
-  //   return getPage() == null ? 1 : parseInt(getPage());
-  // };
-  const [page, setPage] = useState(1);
-  const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
-  const [characters, setCharacters] = useState([]);
+  const initCharacters = useSelector((state) => state.characters);
+  const initPage = useSelector((state) => state.page);
+
+  const [page, setPage] = useState(initPage);
+  const [characters, setCharacters] = useState(initCharacters);
+
+  const dispatch = useDispatch();
+
   const [totalPages, setTotalPages] = useState(7689);
-  //const [showBar, setShowBar] = useState(false);
   const [filter, setFilter] = useState("");
   const [filteredCharacters, setFilteredCharacters] = useState([]);
   const [error, setError] = useState(false);
 
+  const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
+
   function getData(url) {
-    fetch(url)
-      .then((res) => res.json())
-      .then((response) => {
-        setCharacters((characters) => characters.concat(response.results));
-        setTotalPages(response.info.pages);
-      });
+    if (page <= totalPages) {
+      try {
+        fetch(url)
+          .then((res) => res.json())
+          .then((response) => {
+            setTotalPages(response.info.pages);
+            setCharacters((characters) => characters.concat(response.results));
+          });
+        dispatch({ type: "UPDATE_CHARACTERS", payload: [characters, page] });
+      } catch (error) {
+        return characters;
+      }
+    }
   }
 
   function isScrolling() {
     if (
-      window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
+      window.innerHeight + document.documentElement.scrollTop ===
+        document.documentElement.offsetHeight &&
+      totalPages > page
     ) {
-      return;
-    } else {
-      if (totalPages > page) {
-        setPage(page + 1);
-      }
+      setPage(page + 1);
     }
   }
-  // function searchBar() {
-  //   if (document.documentElement.scrollTop > 50) {
-  //     setShowBar(true);
-  //   } else {
-  //     setShowBar(false);
-  //   }
-  // }
+
   function inputValue(e) {
     setFilter(e.target.value);
   }
@@ -64,19 +54,15 @@ function ListOfCaracters() {
   useEffect(() => {
     getData(api);
     window.addEventListener("scroll", isScrolling);
-    //window.addEventListener("scroll", searchBar);
-
     return () => {
       window.removeEventListener("scroll", isScrolling);
-      // window.removeEventListener("scroll", searchBar);
     };
-  }, [api, page]);
+  }, [page]);
 
   async function filteredData() {
     if (filter && filter !== undefined && filter !== "") {
       try {
         const char = await FetchGQL(filter);
-        console.log(` error ${char}`);
         if (char) {
           setError(false);
           setFilteredCharacters(char);
@@ -91,14 +77,10 @@ function ListOfCaracters() {
   }
   useEffect(() => {
     filteredData();
-    console.log(`Characters Filtered : ${filteredCharacters}`);
   }, [filter]);
-
-  console.log(`filter : ${filter}`);
 
   return (
     <Fragment>
-      {/* {(showBar || filter) && ( */}
       <header className="sticky">
         <div className="Search">
           <input
@@ -110,9 +92,8 @@ function ListOfCaracters() {
           />
         </div>
       </header>
-      {/* )} */}{" "}
       <main>
-        {(!filter || filter === "") && <Lista data={characters} page={page} />}
+        {(!filter || filter === "") && <Lista data={characters} />}
         {filteredCharacters && filter !== "" && (
           <Lista data={filteredCharacters} />
         )}

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../../components/Hero";
-import Schwifty from "../../Assests/Schwifty.png";
+import Schwifty from "../../assests/Schwifty.png";
 import "./styles.scss";
 function FirstPage() {
   return (
