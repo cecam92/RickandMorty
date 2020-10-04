@@ -15,7 +15,7 @@ function FirstPage() {
         </div>
       </main>
       <footer>
-        <h2 className="footer">Culimbo</h2>
+        <h4 className="footer">Cesar Martinez </h4>
       </footer>
     </Fragment>
   );
