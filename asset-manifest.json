@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/RickandMorty/static/css/main.e85bc2ae.chunk.css",
-    "main.js": "/RickandMorty/static/js/main.45690fa6.chunk.js",
-    "main.js.map": "/RickandMorty/static/js/main.45690fa6.chunk.js.map",
+    "main.js": "/RickandMorty/static/js/main.35f44689.chunk.js",
+    "main.js.map": "/RickandMorty/static/js/main.35f44689.chunk.js.map",
     "runtime-main.js": "/RickandMorty/static/js/runtime-main.89bc439a.js",
     "runtime-main.js.map": "/RickandMorty/static/js/runtime-main.89bc439a.js.map",
     "static/js/2.526d2110.chunk.js": "/RickandMorty/static/js/2.526d2110.chunk.js",
     "static/js/2.526d2110.chunk.js.map": "/RickandMorty/static/js/2.526d2110.chunk.js.map",
     "index.html": "/RickandMorty/index.html",
-    "precache-manifest.b675d8fa3519401413ce60d28e148ead.js": "/RickandMorty/precache-manifest.b675d8fa3519401413ce60d28e148ead.js",
+    "precache-manifest.92c1ebc512c661f8a967336cc608295f.js": "/RickandMorty/precache-manifest.92c1ebc512c661f8a967336cc608295f.js",
     "service-worker.js": "/RickandMorty/service-worker.js",
     "static/css/main.e85bc2ae.chunk.css.map": "/RickandMorty/static/css/main.e85bc2ae.chunk.css.map",
     "static/js/2.526d2110.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.526d2110.chunk.js.LICENSE.txt",
-    "static/media/Buried.jpeg": "/RickandMorty/static/media/Buried.bc95a60c.jpeg",
-    "static/media/HeroImage.png": "/RickandMorty/static/media/HeroImage.42d6efdb.png",
-    "static/media/Schwifty.png": "/RickandMorty/static/media/Schwifty.1c56175c.png"
+    "static/media/Buried.jpeg": "/RickandMorty/static/media/Buried.e0d8d411.jpeg",
+    "static/media/HeroImage.png": "/RickandMorty/static/media/HeroImage.c78ce9dd.png",
+    "static/media/Schwifty.png": "/RickandMorty/static/media/Schwifty.29c1a9c4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.89bc439a.js",
     "static/js/2.526d2110.chunk.js",
     "static/css/main.e85bc2ae.chunk.css",
-    "static/js/main.45690fa6.chunk.js"
+    "static/js/main.35f44689.chunk.js"
   ]
 }

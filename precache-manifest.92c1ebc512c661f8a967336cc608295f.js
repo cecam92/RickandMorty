@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f0c09d47fffb435f5be62bcad0658c7c",
+    "revision": "911a157b853016372f15f0fcd3a92c70",
     "url": "/RickandMorty/index.html"
   },
   {
-    "revision": "6c3692e9938fc63c3f3f",
+    "revision": "21bd20e1a7cfac275996",
     "url": "/RickandMorty/static/css/main.e85bc2ae.chunk.css"
   },
   {
@@ -16,23 +16,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RickandMorty/static/js/2.526d2110.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6c3692e9938fc63c3f3f",
-    "url": "/RickandMorty/static/js/main.45690fa6.chunk.js"
+    "revision": "21bd20e1a7cfac275996",
+    "url": "/RickandMorty/static/js/main.35f44689.chunk.js"
   },
   {
     "revision": "f8b564e0b69dd2882181",
     "url": "/RickandMorty/static/js/runtime-main.89bc439a.js"
   },
   {
-    "revision": "bc95a60c23d35498d0fd68fcf0a9f8d3",
-    "url": "/RickandMorty/static/media/Buried.bc95a60c.jpeg"
+    "revision": "e0d8d411e7093659d2ead52b2e519259",
+    "url": "/RickandMorty/static/media/Buried.e0d8d411.jpeg"
   },
   {
-    "revision": "42d6efdb5571c7fc125c19f9d1ab2b3b",
-    "url": "/RickandMorty/static/media/HeroImage.42d6efdb.png"
+    "revision": "c78ce9dd5fe0f18979f6a9b564ed1fef",
+    "url": "/RickandMorty/static/media/HeroImage.c78ce9dd.png"
   },
   {
-    "revision": "1c56175cebd3c99943fd557c7c79bf4f",
-    "url": "/RickandMorty/static/media/Schwifty.1c56175c.png"
+    "revision": "29c1a9c41a3287931238cc00ab75d0a5",
+    "url": "/RickandMorty/static/media/Schwifty.29c1a9c4.png"
   }
 ]);
