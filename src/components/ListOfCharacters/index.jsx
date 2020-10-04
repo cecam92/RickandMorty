@@ -98,7 +98,10 @@ function ListOfCaracters() {
           <Lista data={filteredCharacters} />
         )}
         {error && filter && (
-          <img className="errorImage" src={Buried} alt="No found" />
+          <>
+            {/* <p>Sometimes Science Is More Art Than Science</p> */}
+            <img className="errorImage" src={Buried} alt="No found" />
+          </>
         )}
       </main>
     </Fragment>
