@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "./styles.scss";
+import "./newStyles.scss";
 import Lista from "./Lista";
 import FetchGQL from "./FetchGQL";
 import Buried from "../../assests/Buried.jpeg";
@@ -81,8 +81,8 @@ function ListOfCaracters() {
 
   return (
     <Fragment>
-      <header className="sticky">
-        <div className="Search">
+      <main>
+        <div className="Search sticky">
           <input
             className="Search__input"
             placeholder="Write character's name"
@@ -91,17 +91,15 @@ function ListOfCaracters() {
             }}
           />
         </div>
-      </header>
-      <main>
         {(!filter || filter === "") && <Lista data={characters} />}
         {filteredCharacters && filter !== "" && (
           <Lista data={filteredCharacters} />
         )}
         {error && filter && (
-          <>
-            {/* <p>Sometimes Science Is More Art Than Science</p> */}
-            <img className="errorImage" src={Buried} alt="No found" />
-          </>
+          <div className="listCharacter-errorImage-container">
+            {/* <img className="errorImage" src={Buried} alt="No found" /> */}
+            <h2>404: Ooops! buried them</h2>
+          </div>
         )}
       </main>
     </Fragment>

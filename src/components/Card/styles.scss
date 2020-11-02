@@ -1,9 +1,74 @@
-@import "../../NewGlobalStyles.scss";
+@import "../../variables.scss";
 
 .main-card-container {
-  width: 178px;
-  height: 270px;
+  width: 160px;
+  height: 220px;
+  // max-width: 190px;
+  // max-height: 270px;
   display: flex;
+  flex-direction: column;
   background-color: $backgroudCard;
   border-radius: 15px;
+  padding: 5% 3% 3%;
+  justify-content: center;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 80%;
+  position: relative;
+
+  & .card-imagefade {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    top: 5px;
+    left: 5px;
+    filter: blur(13px);
+  }
+  & .card-mainImage {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+.card-details-container {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  margin-top: 3%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-details-name {
+  width: auto;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .card--statusIndicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 3px;
+  }
+  .alive {
+    background-color: $alive;
+  }
+  .dead {
+    background-color: $dead;
+  }
+  & p {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+  }
 }

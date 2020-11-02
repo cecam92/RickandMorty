@@ -1,11 +1,26 @@
-$backgroudCard: #9a9a9a;
-
+@import "./variables.scss";
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100%;
+  font-family: "Inter", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  text-transform: none;
 }
 body {
   background-color: #14181b;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 1% 0px;
+  font-size: 20px;
+  top: 10px;
+  width: 70vw;
+  min-width: 315px;
+  z-index: 10;
+  margin: 0 auto;
 }

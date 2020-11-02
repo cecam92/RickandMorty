@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import CharacterCard from "../CharacterCard";
+import Card from "../Card";
 
 function Lista(props) {
   const characters = props.data;
@@ -16,7 +16,7 @@ function Lista(props) {
                 id: character.id,
               }}
             >
-              <CharacterCard character={character} />
+              <Card character={character} />
             </Link>
           </li>
         ))}

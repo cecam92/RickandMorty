@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
-import Card from "../../components/Card";
+import ListofChatacters from "../../components/ListOfCharacters";
+import Hero from "../../components/Hero";
 const NewInteface = () => {
   return (
     <Fragment>
-      <Card />
+      <Hero />
+      <ListofChatacters />
     </Fragment>
   );
 };
