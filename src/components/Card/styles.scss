@@ -1,0 +1,9 @@
+@import "../../NewGlobalStyles.scss";
+
+.main-card-container {
+  width: 178px;
+  height: 270px;
+  display: flex;
+  background-color: $backgroudCard;
+  border-radius: 15px;
+}
