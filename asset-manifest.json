@@ -1,25 +1,24 @@
 {
   "files": {
-    "main.css": "/RickandMorty/static/css/main.e85bc2ae.chunk.css",
-    "main.js": "/RickandMorty/static/js/main.03ee825a.chunk.js",
-    "main.js.map": "/RickandMorty/static/js/main.03ee825a.chunk.js.map",
+    "main.css": "/RickandMorty/static/css/main.20b8ee48.chunk.css",
+    "main.js": "/RickandMorty/static/js/main.bc3a0d84.chunk.js",
+    "main.js.map": "/RickandMorty/static/js/main.bc3a0d84.chunk.js.map",
     "runtime-main.js": "/RickandMorty/static/js/runtime-main.89bc439a.js",
     "runtime-main.js.map": "/RickandMorty/static/js/runtime-main.89bc439a.js.map",
-    "static/js/2.9ea6103f.chunk.js": "/RickandMorty/static/js/2.9ea6103f.chunk.js",
-    "static/js/2.9ea6103f.chunk.js.map": "/RickandMorty/static/js/2.9ea6103f.chunk.js.map",
+    "static/js/2.34bc34eb.chunk.js": "/RickandMorty/static/js/2.34bc34eb.chunk.js",
+    "static/js/2.34bc34eb.chunk.js.map": "/RickandMorty/static/js/2.34bc34eb.chunk.js.map",
     "index.html": "/RickandMorty/index.html",
-    "precache-manifest.96603813e25f4c87ed89e98a840f20be.js": "/RickandMorty/precache-manifest.96603813e25f4c87ed89e98a840f20be.js",
+    "precache-manifest.d9557bd746b13647fa4343a32d62e688.js": "/RickandMorty/precache-manifest.d9557bd746b13647fa4343a32d62e688.js",
     "service-worker.js": "/RickandMorty/service-worker.js",
-    "static/css/main.e85bc2ae.chunk.css.map": "/RickandMorty/static/css/main.e85bc2ae.chunk.css.map",
-    "static/js/2.9ea6103f.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.9ea6103f.chunk.js.LICENSE.txt",
-    "static/media/Buried.jpeg": "/RickandMorty/static/media/Buried.e0d8d411.jpeg",
-    "static/media/HeroImage.png": "/RickandMorty/static/media/HeroImage.c78ce9dd.png",
-    "static/media/Schwifty.png": "/RickandMorty/static/media/Schwifty.29c1a9c4.png"
+    "static/css/main.20b8ee48.chunk.css.map": "/RickandMorty/static/css/main.20b8ee48.chunk.css.map",
+    "static/js/2.34bc34eb.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.34bc34eb.chunk.js.LICENSE.txt",
+    "static/media/newStyles.scss": "/RickandMorty/static/media/Buried.e0d8d411.jpeg",
+    "static/media/HeroImage.png": "/RickandMorty/static/media/HeroImage.c78ce9dd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.89bc439a.js",
-    "static/js/2.9ea6103f.chunk.js",
-    "static/css/main.e85bc2ae.chunk.css",
-    "static/js/main.03ee825a.chunk.js"
+    "static/js/2.34bc34eb.chunk.js",
+    "static/css/main.20b8ee48.chunk.css",
+    "static/js/main.bc3a0d84.chunk.js"
   ]
 }
