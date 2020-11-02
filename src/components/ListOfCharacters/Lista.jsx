@@ -15,6 +15,9 @@ function Lista(props) {
                 pathname: `/characters/${character.id}`,
                 id: character.id,
               }}
+              onClick={() => {
+                document.documentElement.scrollTop = 0;
+              }}
             >
               <Card character={character} />
             </Link>

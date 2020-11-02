@@ -11,6 +11,18 @@
   border-radius: 15px;
   padding: 5% 3% 3%;
   justify-content: center;
+
+  @media screen and (min-width: 700px) {
+    &:hover {
+      position: relative;
+      top: -5px;
+      left: -10px;
+      width: 180px;
+      height: 230px;
+      display: block;
+      z-index: 999;
+    }
+  }
 }
 
 .card-image-container {
@@ -24,7 +36,7 @@
     height: 100%;
     top: 5px;
     left: 5px;
-    filter: blur(13px);
+    filter: blur(10px);
   }
   & .card-mainImage {
     position: relative;
@@ -54,12 +66,7 @@
     margin-left: 5px;
     margin-right: 3px;
   }
-  .alive {
-    background-color: $alive;
-  }
-  .dead {
-    background-color: $dead;
-  }
+
   & p {
     text-align: center;
     vertical-align: middle;

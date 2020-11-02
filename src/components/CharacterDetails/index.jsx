@@ -4,6 +4,7 @@ import { gql } from "apollo-boost";
 import Front from "./Front";
 import Loading from "../Loading";
 import NotFound from "../../containers/NotFound";
+
 const CharacterDetails = (props) => {
   const characterID = props.id;
   const query = gql`
@@ -16,6 +17,9 @@ const CharacterDetails = (props) => {
      type
      gender
     image
+    location{
+      name
+    }
    }
  }
 `;
@@ -28,11 +32,7 @@ const CharacterDetails = (props) => {
 
         return (
           <Fragment>
-            <main>
-              <div className="cardContainer">
-                <Front character={character} />
-              </div>
-            </main>
+            <Front character={character} />
           </Fragment>
         );
       }}

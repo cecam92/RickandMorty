@@ -2,10 +2,9 @@ import React, { Fragment, useState, useEffect } from "react";
 import "./newStyles.scss";
 import Lista from "./Lista";
 import FetchGQL from "./FetchGQL";
-import Buried from "../../assests/Buried.jpeg";
 import { useSelector, useDispatch } from "react-redux";
 
-function ListOfCaracters() {
+function ListOfCharacters() {
   const initCharacters = useSelector((state) => state.characters);
   const initPage = useSelector((state) => state.page);
 
@@ -82,9 +81,9 @@ function ListOfCaracters() {
   return (
     <Fragment>
       <main>
-        <div className="Search sticky">
+        <div className="search sticky">
           <input
-            className="Search__input"
+            className="search-input"
             placeholder="Write character's name"
             onChange={(e) => {
               inputValue(e);
@@ -98,7 +97,7 @@ function ListOfCaracters() {
         {error && filter && (
           <div className="listCharacter-errorImage-container">
             {/* <img className="errorImage" src={Buried} alt="No found" /> */}
-            <h2>404: Ooops! buried them</h2>
+            <h2>404: Ooops! we buried them</h2>
           </div>
         )}
       </main>
@@ -106,4 +105,4 @@ function ListOfCaracters() {
   );
 }
 
-export default ListOfCaracters;
+export default ListOfCharacters;

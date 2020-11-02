@@ -29,7 +29,7 @@ main {
   }
   @media screen and (min-width: 1700px) {
     grid-template-columns: repeat(5, 20%);
-    width: 45%;
+    width: 50%;
   }
 }
 .characters {
@@ -71,4 +71,10 @@ main {
     color: white;
     background-color: rgba(0, 0, 0, 0.662);
   }
+}
+.search-input {
+  height: 50px;
+  padding: 5px 20px;
+  border-radius: 25px;
+  outline: none;
 }

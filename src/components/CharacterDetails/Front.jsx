@@ -6,16 +6,33 @@ function Front(props) {
     <Fragment>
       <div className="detailsCard">
         <section className="detailsCard__image">
-          <img src={character.image} alt="character" />
+          <img
+            className="detailsCard__image-faded"
+            src={character.image}
+            alt="character"
+          />
+          <img
+            className="detailsCard__image-main"
+            src={character.image}
+            alt="character"
+          />
         </section>
 
         <section className="detailsCard__info">
-          <small id="id">{character.id}</small>
-          <h1 id="name">{character.name}</h1>
-          <p id="status">Status: {character.status}</p>
-          <p id="species">Species: {character.species}</p>
-          <p id="type">Type: {character.type}</p>
-          <p id="gender">Gender: {character.gender}</p>
+          <h2 className="detailsCard-name">{character.name}</h2>
+          <small className="detailsCard-id">{character.id}</small>
+
+          <p className="detailsCard-status">
+            <span
+              className={`card--statusIndicator ${character.status.toLowerCase()}`}
+            ></span>
+            {character.status} - {character.species}
+          </p>
+
+          <p className="detailsCard-type"> {character.type}</p>
+          <p className="detailsCard-gender">{character.gender}</p>
+          <p className="detailsCard-lastLocation">Last known location:</p>
+          <p className="detailsCard-location"> {character.location.name}</p>
         </section>
       </div>
     </Fragment>

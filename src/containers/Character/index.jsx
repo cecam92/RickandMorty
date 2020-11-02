@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Hero from "../../components/Hero";
 import "./styles.scss";
 import CharacterDetails from "../../components/CharacterDetails";
-
+import ListOfCharacters from "../../components/ListOfCharacters";
 function Character(props) {
   const id = validarUrl(props);
 
@@ -19,6 +19,7 @@ function Character(props) {
       <Hero />
       <main>
         <CharacterDetails id={id} />
+        <ListOfCharacters />
       </main>
     </Fragment>
   );
