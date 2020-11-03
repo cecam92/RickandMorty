@@ -1,56 +1,105 @@
 main {
+  width: 100vw;
+  height: auto;
   display: flex;
   justify-content: center;
-  align-content: center;
+  flex-direction: column;
 }
 .listCharacters {
-  padding: 0px 0px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 15px 2px;
+  margin: 10px auto;
+  justify-content: center;
+
+  @media screen and (min-width: 400px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(3, 30%);
+    width: 80%;
+    gap: 20px 0px;
+  }
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(4, 20%);
+    width: 90%;
+    gap: 15px 0px;
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(5, 20%);
+    width: 70%;
+    gap: 20px 0px;
+  }
+  @media screen and (min-width: 1700px) {
+    grid-template-columns: repeat(5, 20%);
+    width: 50%;
+    gap: 25px 0px;
+  }
 }
 .characters {
-  list-style: none;
-  margin: 10px;
-}
-.Search {
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin: 0px 0px;
-
-  &__input {
-    width: 77%;
-    height: 20px;
-    padding: 1% 1%;
-    border-radius: 5px;
-    border: 1px solid green;
-    &:focus {
-      outline: none;
-      border: 2px solid green;
-    }
+  align-items: center;
+  & a {
+    width: 160px;
+    height: 220px;
   }
 }
-.errorImage {
-  margin-top: 2%;
-  width: 60%;
+.listCharacter-errorImage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assests/Buried.jpeg");
+  width: 70vw;
+  height: 23vh;
+  min-width: 290px;
+  min-height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 10px auto;
+  border-radius: 2%;
 
-  @media screen and (max-width: 1800px) and (min-width: 670px) {
-    width: 50%;
+  @media screen and (min-width: 420px) {
+    background-size: contain;
+    height: 15vh;
+    max-width: 400px;
+    min-height: 200px;
   }
-  @media screen and (min-width: 300px) and( max-width:670px ) {
-    margin-top: 10%;
-    width: 80%;
-    height: 40%;
+  @media screen and (min-width: 750px) {
+    height: 40vh;
+    max-width: 800px;
+    max-height: 400px;
+  }
+  & h2 {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.662);
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .listCharacters {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+.search-container {
+  background-color: rgba(0, 0, 0, 0.662);
+  border-radius: 25px;
+  width: 70vw;
+  max-width: 1000px;
+  min-width: 315px;
+  margin: 10px auto;
+  display: flex;
 }
-@media screen and (min-width: 1639px) {
-  .listCharacters {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.search-input {
+  height: 50px;
+  padding: 5px 20px;
+  border-radius: 25px;
+  outline: none;
+  margin: 0 auto;
+
+  background-color: rgba(249, 249, 249, 0.22);
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  font-size: medium;
+  border: none;
+  &::placeholder {
+    color: white;
   }
 }

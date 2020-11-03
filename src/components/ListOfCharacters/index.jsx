@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "./newStyles.scss";
+import "./styles.scss";
 import Lista from "./Lista";
 import FetchGQL from "./FetchGQL";
 import { useSelector, useDispatch } from "react-redux";
@@ -81,10 +81,10 @@ function ListOfCharacters() {
   return (
     <Fragment>
       <main>
-        <div className="search sticky">
+        <div className="search-container sticky">
           <input
             className="search-input"
-            placeholder="Write character's name"
+            placeholder="Find character by name"
             onChange={(e) => {
               inputValue(e);
             }}
@@ -96,7 +96,6 @@ function ListOfCharacters() {
         )}
         {error && filter && (
           <div className="listCharacter-errorImage-container">
-            {/* <img className="errorImage" src={Buried} alt="No found" /> */}
             <h2>404: Ooops! we buried them</h2>
           </div>
         )}

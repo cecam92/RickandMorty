@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./routes/App";
-import "./NewGlobalStyles.scss";
+import "./globalStyles.scss";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { createStore } from "redux";
