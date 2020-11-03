@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/RickandMorty/static/css/main.c57a6c50.chunk.css",
+    "main.css": "/RickandMorty/static/css/main.3a50728e.chunk.css",
     "main.js": "/RickandMorty/static/js/main.77ad99ff.chunk.js",
     "main.js.map": "/RickandMorty/static/js/main.77ad99ff.chunk.js.map",
     "runtime-main.js": "/RickandMorty/static/js/runtime-main.89bc439a.js",
@@ -8,9 +8,9 @@
     "static/js/2.34bc34eb.chunk.js": "/RickandMorty/static/js/2.34bc34eb.chunk.js",
     "static/js/2.34bc34eb.chunk.js.map": "/RickandMorty/static/js/2.34bc34eb.chunk.js.map",
     "index.html": "/RickandMorty/index.html",
-    "precache-manifest.e5926ca683f270abcbf72d1e5d476be0.js": "/RickandMorty/precache-manifest.e5926ca683f270abcbf72d1e5d476be0.js",
+    "precache-manifest.9769f0b5ba07c99bf05579d139f256a1.js": "/RickandMorty/precache-manifest.9769f0b5ba07c99bf05579d139f256a1.js",
     "service-worker.js": "/RickandMorty/service-worker.js",
-    "static/css/main.c57a6c50.chunk.css.map": "/RickandMorty/static/css/main.c57a6c50.chunk.css.map",
+    "static/css/main.3a50728e.chunk.css.map": "/RickandMorty/static/css/main.3a50728e.chunk.css.map",
     "static/js/2.34bc34eb.chunk.js.LICENSE.txt": "/RickandMorty/static/js/2.34bc34eb.chunk.js.LICENSE.txt",
     "static/media/styles.scss": "/RickandMorty/static/media/Buried.e0d8d411.jpeg",
     "static/media/HeroImage.png": "/RickandMorty/static/media/HeroImage.c78ce9dd.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.89bc439a.js",
     "static/js/2.34bc34eb.chunk.js",
-    "static/css/main.c57a6c50.chunk.css",
+    "static/css/main.3a50728e.chunk.css",
     "static/js/main.77ad99ff.chunk.js"
   ]
 }
